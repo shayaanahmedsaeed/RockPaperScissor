@@ -1,0 +1,189 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+/* Heading */
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Choices layout */
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+/* Individual choice cards */
+.choice {
+    width: 160px;
+    height: 160px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Images */
+.choice img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+/* Hover effects */
+.choice:hover {
+    transform: translateY(-10px) scale(1.04);
+    border-color: #38bdf8;
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.25);
+}
+
+.choice:active {
+    transform: scale(0.94);
+}
+
+/* Score board */
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.score {
+    min-width: 100px;
+    padding: 18px 25px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+}
+
+/* Score numbers */
+#user-score,
+#computer-score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #38bdf8;
+    margin-bottom: 8px;
+}
+
+/* Player names */
+.score p:last-child {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    text-transform: capitalize;
+}
+
+/* Message */
+.msg-container {
+    text-align: center;
+    max-width: 100%;
+}
+
+#msg {
+    display: inline-block;
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #172641, #2e4b6c);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.5;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Tablet and mobile */
+@media (max-width: 600px) {
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    .choices {
+        gap: 14px;
+        margin-bottom: 35px;
+    }
+
+    .choice {
+        width: 105px;
+        height: 105px;
+        padding: 5px;
+        border-radius: 16px;
+    }
+
+    .choice img {
+        border-radius: 10px;
+    }
+
+    .score-board {
+        gap: 20px;
+    }
+
+    .score {
+        min-width: 100px;
+        padding: 15px;
+    }
+
+    #user-score,
+    #computer-score {
+        font-size: 2.3rem;
+    }
+
+    .score p:last-child {
+        font-size: 1rem;
+    }
+
+    #msg {
+        padding: 13px 18px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .choice {
+        width: 85px;
+        height: 85px;
+    }
+
+    .choices {
+        gap: 10px;
+    }
+
+    .score-board {
+        gap: 12px;
+    }
+}
